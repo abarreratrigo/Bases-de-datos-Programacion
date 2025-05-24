@@ -1,4 +1,4 @@
-package BBDD;
+package Clases;
 
 public class Alumno {
     private int id;
@@ -71,7 +71,7 @@ public class Alumno {
                 " | Nombre='" + nombre + '\'' +
                 " | Direccion='" + direccion + '\'' +
                 " | Estado Matricula='" + estadoMatricula + '\'' +
-                " | Carnet Conducir=" + carnetConducir +
+                " | Carnet Conducir=" + (carnetConducir ? "SI" : "NO") +
                 '\n';
     }
 }

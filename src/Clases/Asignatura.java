@@ -1,4 +1,4 @@
-package BBDD;
+package Clases;
 
 public class Asignatura {
     int id;
