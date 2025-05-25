@@ -43,7 +43,7 @@ public class ConexionDAOInstituto extends ArrayList<Object> {
                 //Con lo leído de la base de datos
                 //Creamos un objeto Alumno del modelo
 
-                Alumno alumno = new Alumno(id, nombre, direccion, estado_Matricula);
+                Alumno alumno = new Alumno(id, nombre, direccion, estado_Matricula, carnet_conducir);
                 alumnos.add(alumno);
             }
         }catch (SQLException e){
@@ -80,15 +80,15 @@ public class ConexionDAOInstituto extends ArrayList<Object> {
         return resultado;
     }
 
-    public int eliminarAlumno (String n){
+    public int eliminarAlumno (int idAlumno){
         int resultado = 0;
         try (Connection conn= connect()){
             String query = "DELETE FROM alumnos " +
-                    "WHERE nombre = " + n +";";
+                    "WHERE id = " + idAlumno +";";
 
             //Establecemos para ? su valor
             PreparedStatement stmt= conn.prepareStatement(query);
-            stmt.setString(1, n);
+            stmt.setInt(1, idAlumno);
 
             //El execute se usa para borrar en este caso
             resultado = stmt.executeUpdate();
@@ -301,7 +301,7 @@ public class ConexionDAOInstituto extends ArrayList<Object> {
         try (Connection conn = connect()) {
             // Validación previa
             if (m.getAlumno() == null || m.getAsignatura() == null) {
-                System.out.println("Error: El alumno o la asignatura de la matrícula es null.");
+                System.out.println("Error: El alumno o la asignatura de la matrícula no existe.");
                 return 0;
             }
 

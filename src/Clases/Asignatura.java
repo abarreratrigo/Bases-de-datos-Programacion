@@ -38,9 +38,14 @@ public class Asignatura {
     }
 
     @Override
-    public String toString(){
-        return "\tId= " + id +
-                " | Nombre='" + nombre + '\'' +
-                " | Curso= '" + curso + '\n';
+    public String toString() {
+        return String.format(
+                "%-5d %-25s %-10s",
+                id,
+                nombre != null ? nombre : "N/A",
+                curso
+        );
     }
+
+
 }

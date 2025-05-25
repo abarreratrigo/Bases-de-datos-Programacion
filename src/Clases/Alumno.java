@@ -67,11 +67,14 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "\tId= " + id +
-                " | Nombre='" + nombre + '\'' +
-                " | Direccion='" + direccion + '\'' +
-                " | Estado Matricula='" + estadoMatricula + '\'' +
-                " | Carnet Conducir=" + (carnetConducir ? "SI" : "NO") +
-                '\n';
+        return String.format(
+                "%-5d %-20s %-30s %-15s %-10s",
+                id,
+                nombre != null ? nombre : "N/A",
+                direccion != null ? direccion : "N/A",
+                estadoMatricula != null ? estadoMatricula : "N/A",
+                carnetConducir ? "Sí" : "No"
+        );
     }
+
 }

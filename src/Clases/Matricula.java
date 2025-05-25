@@ -49,11 +49,14 @@ public class Matricula {
 
     @Override
     public String toString() {
-        return "\tId= " + id +
-                " | IdAlumno='" + alumno.getId() + '\'' +
-                " | Alumno='" + alumno.getNombre() + '\'' +
-                " | Asignatura='" + asignatura.getNombre() + '\'' +
-                " | Nota='" + nota + '\'' +
-                '\n';
+        return String.format(
+                "%-5d %-10d %-20s %-25s %-5.2f",
+                id,
+                alumno.getId(),
+                alumno.getNombre() != null ? alumno.getNombre() : "N/A",
+                asignatura.getNombre() != null ? asignatura.getNombre() : "N/A",
+                nota
+        );
     }
+
 }

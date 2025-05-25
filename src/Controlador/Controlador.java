@@ -2,7 +2,6 @@ package Controlador;
 import Clases.*;
 import Modelo.ConexionDAOInstituto;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Controlador {
@@ -24,8 +23,8 @@ public class Controlador {
         return daoInstituto.insertarAlumno(a);
     }
 
-    public int eliminarAlumno(String nombre) {
-        return daoInstituto.eliminarAlumno(nombre);
+    public int eliminarAlumno(int id) {
+        return daoInstituto.eliminarAlumno(id);
     }
 
     public Alumno obtenerAlumnoPorId(int idAlumno) {
