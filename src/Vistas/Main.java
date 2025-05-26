@@ -82,7 +82,7 @@ public class Main {
                             case 2-> {
                                 System.out.println(ALUMNOS_EXISTENTES_BOX);
                                 obtenerAlumnos(controlador);
-                                System.out.println("Introduce el nombre del alumno a eliminar: ");
+                                System.out.println("Introduce el ID del alumno a eliminar: ");
                                 int id = new Scanner(System.in).nextInt();
                                 controlador.eliminarAlumno(id);
                             }

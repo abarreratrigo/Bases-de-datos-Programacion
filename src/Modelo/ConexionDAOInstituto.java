@@ -11,7 +11,7 @@ import java.util.List;
 public class ConexionDAOInstituto extends ArrayList<Object> {
     private static final String URL = "jdbc:mysql://localhost:3306/instituto";
     private static final String USER = "root";
-    private static final String PASSWORD = "261206";
+    private static final String PASSWORD = "alexisba";
     private static Connection connect() throws SQLException{
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
@@ -88,7 +88,6 @@ public class ConexionDAOInstituto extends ArrayList<Object> {
 
             //Establecemos para ? su valor
             PreparedStatement stmt= conn.prepareStatement(query);
-            stmt.setInt(1, idAlumno);
 
             //El execute se usa para borrar en este caso
             resultado = stmt.executeUpdate();
